@@ -3,10 +3,6 @@ from django import forms
 from django.contrib.auth import authenticate
 from django.contrib.auth.forms import AuthenticationForm
 
-class NameForm(forms.Form):
-	username = forms.CharField(label='username', max_length=1000)
-	password = forms.CharField(label='password', max_length=1000)
-
 class RADIUSAuthenticationForm(AuthenticationForm):
     def __init__(self, realm, request, *args, **kwargs):
         super(UserAuthenticationForm, self).__init__(request, *args, **kwargs)

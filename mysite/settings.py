@@ -24,8 +24,10 @@ SECRET_KEY = 'iuw$6rt52v5r&#e!8jr3dr5ee&=3m-^0gz1s=jy+%lc)x%pey1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+#DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
+#ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -37,6 +39,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'polls',
+#    'users',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -63,6 +67,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+		'django.core.context_processors.static',
             ],
         },
     },
@@ -81,10 +86,14 @@ DATABASES = {
     }
 }
 
-#AUTHENTICATION_BACKENDS = (
-#    'radiusauth.backends.RADIUSBackend',
+AUTHENTICATION_BACKENDS = (
+    'radiusauth.backends.radius.RADIUSBackend',
 #    'django.contrib.auth.backends.ModelBackend',
-#)
+)
+
+RADIUS_SERVER = '14.0.90.92'
+RADIUS_PORT = 1812
+RADIUS_SECRET = 'StarRadi0001'
 
 
 # Internationalization
@@ -106,4 +115,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/assets/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+    ('byebye', os.path.join(BASE_DIR, 'static2'),),
+)
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'collected_statics')
+
+
+#LOGIN_REDIRECT_URL = '/polls/accounts/login/'
+LOGIN_URL = '/polls/accounts/login/'
