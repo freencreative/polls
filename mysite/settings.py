@@ -126,8 +126,8 @@ STATICFILES_DIRS = (
 STATIC_ROOT = os.path.join(BASE_DIR, 'collected_statics')
 
 
-#LOGIN_REDIRECT_URL = '/polls/accounts/login/'
-LOGOUT_REDIRECT_URL = '/django/polls/accounts/login/'
+LOGIN_REDIRECT_URL = '/django/polls'
+#LOGOUT_REDIRECT_URL = '/django/polls/accounts/login/'
 LOGIN_URL = '/django/polls/accounts/login/'
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
