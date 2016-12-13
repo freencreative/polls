@@ -17,7 +17,9 @@ urlpatterns = [
     url(
         r'^accounts/logoutr/',
         'django.contrib.auth.views.logout',
-        name='logout'
+        name='logout', kwargs={
+                'next_page':'/django/polls/accounts/login/'
+        }
     ),
     url(
         r'^redirect_test/',
