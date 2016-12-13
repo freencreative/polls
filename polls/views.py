@@ -12,5 +12,13 @@ def index(request):
 	return HttpResponse("Hello, world")
 
 def redirect_test(request):
-	return redirect('/polls')
+	return redirect('/django/polls')
+
+@login_required
+def redirect1(request):
+        return HttpResponse("Hello, world1")
+
+@login_required
+def redirect2(request):
+        return HttpResponse("Hello, world2")
 

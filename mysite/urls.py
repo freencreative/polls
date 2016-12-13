@@ -10,7 +10,7 @@ urlpatterns = [
     # url(r'^blog/', include('blog.urls')),
 #    url(r'^users/', include('users.urls')),
     url(r'^polls/', include('polls.urls')),
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^khparkadmin/', include(admin.site.urls)),
 ]
 
 #from django.contrib.staticfiles.views import serve

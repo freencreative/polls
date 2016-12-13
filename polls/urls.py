@@ -15,7 +15,7 @@ urlpatterns = [
         }
     ),
     url(
-        r'^accounts/logout/',
+        r'^accounts/logoutr/',
         'django.contrib.auth.views.logout',
         name='logout'
     ),
@@ -23,5 +23,15 @@ urlpatterns = [
         r'^redirect_test/',
         'polls.views.redirect_test',
         name='redirect_test'
+    ),
+    url(
+        r'^redirect1/',
+        'polls.views.redirect1',
+        name='redirect1'
+    ),
+    url(
+        r'^redirect2/',
+        'polls.views.redirect2',
+        name='redirect2'
     ),
 ]

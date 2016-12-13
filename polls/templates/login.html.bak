@@ -14,12 +14,6 @@
     {% endif %}
 {% endif %}
 
-
-{% if user.is_authenticated %}
-<p> you are authenticated..</p>
-
-{% else %}
-
 <form method="post" action="{% url 'login' %}">
 {% csrf_token %}
 <table>
@@ -37,6 +31,4 @@
 <input type="hidden" name="next" value="{{ next }}" />
 </form>
 
-{% endif %}
 {% endblock %}
-

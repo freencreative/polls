@@ -23,10 +23,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'iuw$6rt52v5r&#e!8jr3dr5ee&=3m-^0gz1s=jy+%lc)x%pey1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-#DEBUG = False
+#DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['14.0.92.103']
 #ALLOWED_HOSTS = []
 
 
@@ -82,7 +82,8 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': '/home/mysite/db/db.sqlite3',
     }
 }
 
@@ -115,7 +116,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
-STATIC_URL = '/assets/'
+STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
@@ -126,4 +127,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'collected_statics')
 
 
 #LOGIN_REDIRECT_URL = '/polls/accounts/login/'
-LOGIN_URL = '/polls/accounts/login/'
+LOGOUT_REDIRECT_URL = '/django/polls/accounts/login/'
+LOGIN_URL = '/django/polls/accounts/login/'
+
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
