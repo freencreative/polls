@@ -36,4 +36,9 @@ urlpatterns = [
         'polls.views.redirect2',
         name='redirect2'
     ),
+    url(
+        r'^successlogin/',
+        'polls.views.successlogin',
+        name='successlogin'
+    ),
 ]

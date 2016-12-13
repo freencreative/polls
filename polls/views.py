@@ -1,3 +1,5 @@
+#-*- coding: utf-8 -*-
+
 from django.shortcuts import (
     render,
     get_object_or_404,
@@ -22,3 +24,5 @@ def redirect1(request):
 def redirect2(request):
         return HttpResponse("Hello, world2")
 
+def successlogin(request):
+        return HttpResponse("이미 로그인 된 상태입니다.")
