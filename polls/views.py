@@ -5,7 +5,7 @@ from django.shortcuts import (
     get_object_or_404,
     redirect,
 )
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 
@@ -26,3 +26,7 @@ def redirect2(request):
 
 def successlogin(request):
         return HttpResponse("이미 로그인 된 상태입니다.")
+
+@login_required
+def querystring(request):
+	return redirect('/?aa=bb&cc=dd')

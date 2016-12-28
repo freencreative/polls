@@ -41,4 +41,9 @@ urlpatterns = [
         'polls.views.successlogin',
         name='successlogin'
     ),
+    url(
+        r'^querystring/',
+        'polls.views.querystring',
+        name='querystring'
+    ),
 ]
